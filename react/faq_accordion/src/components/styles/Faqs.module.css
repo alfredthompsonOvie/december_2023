@@ -1,0 +1,23 @@
+.faqs {
+  align-self: start;
+  margin-top: 8em;
+  max-width: 550px;
+  width: 100%;
+  margin-inline: auto;
+  background-color: white;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  padding: 2em;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.faqsTitle {
+  display: flex;
+  align-items: center;
+  gap:.31em;
+}
+.faqsTitle img {
+  width: .8em;
+}
