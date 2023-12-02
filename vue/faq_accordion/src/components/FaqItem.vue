@@ -4,7 +4,7 @@
       <span class="faqQuestionContent">
         {{ question }}
       </span>
-      <img :src="imageSrc" alt="" />
+      <img :src="getImageUrl(isCur ? 'minus' : 'plus')" alt="" />
     </button>
 
     <Transition name="slide" mode="out-in">
@@ -39,6 +39,10 @@ const question = computed(() => props.faq.faq.question);
 const answer = computed(() => props.faq.faq.answer);
 const isCur = computed(() => props.curFaq.curFaq === props.faq.faq.question);
 const imageSrc = computed(() => isCur.value ? "src/assets/images/icon-minus.svg" : "src/assets/images/icon-plus.svg");
+
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/icon-${name}.svg`, import.meta.url).href
+}
 
 </script>
 

@@ -1,5 +1,9 @@
 <template>
 	<div class="faqs">
+    <h1 class="faqsTitle">
+				<img :src="getImageUrl('star')" alt="star icon" />
+				<span>FAQs</span>
+			</h1>
 		<template v-for="faq in faqs">
 			<FaqItem :faq="{ faq }" :curFaq="{curFaq}" @toggle-faq="onHandleToggle" />
 		</template>
@@ -39,6 +43,10 @@ function onHandleToggle(question) {
 
   curFaq.value = question ;
 }
+
+function getImageUrl(name) {
+  return new URL(`/src/assets/images/icon-${name}.svg`, import.meta.url).href
+}
 </script>
 
 <style scoped>
@@ -61,6 +69,7 @@ function onHandleToggle(question) {
 	display: flex;
 	align-items: center;
 	gap: 0.31em;
+  margin-bottom: .6em;
 }
 .faqsTitle img {
 	width: 0.8em;
